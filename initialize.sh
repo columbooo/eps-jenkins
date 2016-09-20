@@ -11,3 +11,6 @@ touch /etc/apt/sources.list.d/docker.list
 echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >> /etc/apt/sources.list.d docker.list
 apt-get update
 echo y | apt-get install docker-engine
+gpasswd -a jenkins docker
+systemctl restart docker
+service jenkins restart
