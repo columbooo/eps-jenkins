@@ -29,13 +29,13 @@
     <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.21.1">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec>0 */3 * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.Shell>
-      <command>chmod 777 ./runTests.sh
-./runTests.sh</command>
-    </hudson.tasks.Shell>
     <hudson.plugins.gradle.Gradle plugin="gradle@1.25">
       <description></description>
       <switches></switches>
@@ -131,9 +131,8 @@
       <externalDelete></externalDelete>
     </hudson.plugins.ws__cleanup.PreBuildCleanup>
     <com.cloudbees.jenkins.plugins.okidocki.DockerBuildWrapper plugin="docker-custom-build-environment@1.6.5">
-      <selector class="com.cloudbees.jenkins.plugins.okidocki.DockerfileImageSelector">
-        <contextPath>.</contextPath>
-        <dockerfile>Dockerfile</dockerfile>
+      <selector class="com.cloudbees.jenkins.plugins.okidocki.PullDockerImageSelector">
+        <image>ilicell/eps-android-build</image>
       </selector>
       <dockerInstallation>docker</dockerInstallation>
       <dockerHost plugin="docker-commons@1.4.1"/>
@@ -147,4 +146,3 @@
       <net>bridge</net>
     </com.cloudbees.jenkins.plugins.okidocki.DockerBuildWrapper>
   </buildWrappers>
-</project>
