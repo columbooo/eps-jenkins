@@ -12,6 +12,8 @@ echo 'deb https://apt.dockerproject.org/repo ubuntu-xenial main' | tee --append 
 apt-get update
 echo y | apt-get install docker-engine
 gpasswd -a jenkins docker
+rm -R /var/lib/jenkins/*
+cp -R ./* /var/lib/jenkins/
+chown -R jenkins:jenkins /var/lib/jenkins/*
 service docker restart
 service jenkins restart
-
