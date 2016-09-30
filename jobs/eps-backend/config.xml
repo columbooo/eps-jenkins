@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/fzicell/eps-backend.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Maven>
+      <targets>clean package</targets>
+      <usePrivateRepository>false</usePrivateRepository>
+      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+    </hudson.tasks.Maven>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+cd /home/osboxes/repos/compose/eps-compose/
+docker-compose stop eps-backend</command>
+    </hudson.tasks.Shell>
+    <org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerBuilder plugin="artifactdeployer@0.33">
+      <entry>
+        <includes>rest-service-*.jar</includes>
+        <basedir>target/</basedir>
+        <excludes></excludes>
+        <remote>/home/osboxes/repos/compose/eps-compose/eps-backend/shared/</remote>
+        <flatten>false</flatten>
+        <deleteRemote>true</deleteRemote>
+        <deleteRemoteArtifacts>false</deleteRemoteArtifacts>
+        <deleteRemoteArtifactsByScript>false</deleteRemoteArtifactsByScript>
+        <failNoFilesDeploy>false</failNoFilesDeploy>
+      </entry>
+    </org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerBuilder>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+cd /home/osboxes/repos/compose/eps-compose/
+docker-compose start eps-backend
+set +e
+docker-compose exec -d eps-backend java -jar rest-service-0.0.1-SNAPSHOT.jar
+set -e</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.30">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>

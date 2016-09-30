@@ -1,0 +1,21 @@
+Started by user [8mha:AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9zJzE4qqcfADWNm9awgAAAA==[0milaszlo
+Building in workspace /var/lib/jenkins/workspace/eps-backend
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/fzicell/eps-backend.git # timeout=10
+Fetching upstream changes from https://github.com/fzicell/eps-backend.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/fzicell/eps-backend.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0cec8f38cec7f05d417cab44470ea073995c8fbc (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0cec8f38cec7f05d417cab44470ea073995c8fbc
+ > git rev-list 0cec8f38cec7f05d417cab44470ea073995c8fbc # timeout=10
+[eps-backend] $ /bin/bash /tmp/hudson5289967385423925555.sh
+asd
+cp: cannot create regular file ‘/home/osboxes/repos/compose/eps-compose/eps-backend/shared/eps-backend-service.jar’: Permission denied
+sudo: no tty present and no askpass program specified
+Build step 'Execute shell' marked build as failure
+Archiving artifacts
+Finished: FAILURE

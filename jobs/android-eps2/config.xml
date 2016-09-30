@@ -117,7 +117,7 @@
       <attachmentsPattern>app/build/outputs/apk/app-release-unsigned.apk</attachmentsPattern>
       <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
       <postsendScript>$DEFAULT_POSTSEND_SCRIPT</postsendScript>
-      <attachBuildLog>false</attachBuildLog>
+      <attachBuildLog>true</attachBuildLog>
       <compressBuildLog>false</compressBuildLog>
       <replyTo>$DEFAULT_REPLYTO</replyTo>
       <saveOutput>false</saveOutput>
@@ -146,3 +146,4 @@
       <net>bridge</net>
     </com.cloudbees.jenkins.plugins.okidocki.DockerBuildWrapper>
   </buildWrappers>
+</project>

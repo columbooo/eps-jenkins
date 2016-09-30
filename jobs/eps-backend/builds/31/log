@@ -1,0 +1,33 @@
+Started by user [8mha:AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9zJzE4qqcfADWNm9awgAAAA==[0milaszlo
+Building in workspace /var/lib/jenkins/workspace/eps-backend
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/fzicell/eps-backend.git # timeout=10
+Fetching upstream changes from https://github.com/fzicell/eps-backend.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/fzicell/eps-backend.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0cec8f38cec7f05d417cab44470ea073995c8fbc (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0cec8f38cec7f05d417cab44470ea073995c8fbc
+ > git rev-list 0cec8f38cec7f05d417cab44470ea073995c8fbc # timeout=10
+[eps-backend] $ /bin/bash /tmp/hudson7721006242618230020.sh
+total 7816
+drwxrwxr-x 5 osboxes osboxes    4096 Sep 28 13:19 .
+drwxrwxr-x 4 osboxes osboxes    4096 Sep 28 13:29 ..
+-rwxrwxr-x 1 osboxes osboxes     993 Sep 28 13:13 docker-compose.yml
+drwxrwxr-x 3 osboxes osboxes    4096 Sep 28 13:13 eps-backend
+drwxrwxr-x 3 osboxes osboxes    4096 Sep 28 13:13 eps-db
+drwxrwxr-x 8 osboxes osboxes    4096 Sep 28 13:13 .git
+-rwxrwxr-x 1 osboxes osboxes     315 Sep 28 13:13 start.sh
+-rwxrwxr-x 1 osboxes osboxes      21 Sep 28 13:13 stop.sh
+-rw-rw-r-- 1 osboxes osboxes 7970401 Sep 28 13:19 sudo
+[ArtifactDeployer] - Starting deployment from the build step ...
+[ArtifactDeployer] - 1 file(s) have been copied from the '/var/lib/jenkins/workspace/eps-backend/target' to '/home/osboxes/repos/compose/eps-compose/eps-backend/shared'.
+[ArtifactDeployer] - Stopping deployment from the build step ...
+[eps-backend] $ /bin/bash /tmp/hudson6256584424736099485.sh
+/tmp/hudson6256584424736099485.sh: line 3:  7118 Terminated              docker-compose exec -d -T eps-backend java -jar rest-service-0.0.1-SNAPSHOT.jar
+Build was aborted
+Aborted by [8mha:AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9zJzE4qqcfADWNm9awgAAAA==[0milaszlo
+Finished: ABORTED

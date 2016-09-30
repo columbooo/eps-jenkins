@@ -1,0 +1,24 @@
+Started by user [8mha:AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9zJzE4qqcfADWNm9awgAAAA==[0milaszlo
+Building in workspace /var/lib/jenkins/workspace/eps-backend
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/fzicell/eps-backend.git # timeout=10
+Fetching upstream changes from https://github.com/fzicell/eps-backend.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/fzicell/eps-backend.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision ef1bb701bc8cfeb68662390694c5564145a6a72a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ef1bb701bc8cfeb68662390694c5564145a6a72a
+ > git rev-list 0cec8f38cec7f05d417cab44470ea073995c8fbc # timeout=10
+[eps-backend] $ /bin/bash /tmp/hudson3027039741016977855.sh
+Stopping eps-backend ... 
+[1A[2KStopping eps-backend ... done[1B[ArtifactDeployer] - Starting deployment from the build step ...
+[ArtifactDeployer] - 1 file(s) have been copied from the '/var/lib/jenkins/workspace/eps-backend/target' to '/home/osboxes/repos/compose/eps-compose/eps-backend/shared'.
+[ArtifactDeployer] - Stopping deployment from the build step ...
+[eps-backend] $ /bin/bash /tmp/hudson2405655173266922137.sh
+Starting eps-backend ... 
+[1A[2KStarting eps-backend ... done[1BAn HTTP request took too long to complete. Retry with --verbose to obtain debug information.
+If you encounter this issue regularly because of slow network conditions, consider setting COMPOSE_HTTP_TIMEOUT to a higher value (current value: 60).
+Finished: SUCCESS
